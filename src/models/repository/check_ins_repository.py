@@ -3,7 +3,7 @@ from src.models.entities.check_ins import CheckIns
 from sqlalchemy.exc import IntegrityError
 
 class CheckInRepository:
-  def insert_check_in(self, attendee_id):
+  def insert_check_in(self, attendee_id: str) -> str:
     with db_connection_handler as database:
       try:
         check_in = (
